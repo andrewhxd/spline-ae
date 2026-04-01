@@ -13,8 +13,8 @@ export interface EasingResult {
  */
 const nativeEasingParams: Record<string, [number, number, number, number]> = {
   linear: [0, 0, 0, 0], // no ease
-  easeOutCubic: [0, 0.1, 0, 80],
-  easeOutExpo: [0, 0.1, 0, 95],
+  easeOutCubic: [0, 80, 0, 0.1],
+  easeOutExpo: [0, 95, 0, 0.1],
   easeInOutQuad: [0, 50, 0, 50],
 };
 

@@ -17,14 +17,7 @@ export function generateCreateText(action: CreateTextAction, actionIndex: number
   lines.push(`var ${layerVar} = comp.layers.addText("${escapedText}");`);
   lines.push(`${layerVar}.name = "${action.name}";`);
 
-  // Position
-  if (action.position) {
-    lines.push(
-      `${layerVar}.property("Transform").property("Position").setValue([${action.position[0]}, ${action.position[1]}]);`
-    );
-  }
-
-  // Text styling
+  // Text styling (must come before position so anchor point is correct)
   if (action.style) {
     lines.push(`var ${docVar} = ${layerVar}.property("Source Text").value;`);
 
@@ -55,6 +48,24 @@ export function generateCreateText(action: CreateTextAction, actionIndex: number
         `${layerVar}.property("Transform").property("Opacity").setValue(${action.style.opacity});`
       );
     }
+  }
+
+  // Center anchor point on text bounds
+  const rectVar = `textRect${actionIndex}`;
+  lines.push(`var ${rectVar} = ${layerVar}.sourceRectAtTime(0, false);`);
+  lines.push(
+    `${layerVar}.property("Transform").property("Anchor Point").setValue([${rectVar}.left + ${rectVar}.width / 2, ${rectVar}.top + ${rectVar}.height / 2]);`
+  );
+
+  // Position (after styling + anchor so the position is the visual center of the text)
+  if (action.position) {
+    lines.push(
+      `${layerVar}.property("Transform").property("Position").setValue([${action.position[0]}, ${action.position[1]}]);`
+    );
+  } else {
+    lines.push(
+      `${layerVar}.property("Transform").property("Position").setValue([comp.width / 2, comp.height / 2]);`
+    );
   }
 
   // Inline animation

@@ -369,8 +369,6 @@ The `examples/` folder has ready-to-use plans:
 | `create-text-with-fade.json` | Create a "Hello World" text layer and fade it in |
 | `create-glowing-line.json` | Create a cyan line with glow and trim path wipe |
 | `mixed-actions.json` | Title + underline + pop existing Card layers |
-| `logo-accordion-spin.json` | Logo intro with spin, slide, and typewriter brand reveal |
-| `logo-accordion-intro.json` | Logo layers scale in from center with typewriter text |
 
 Run any example:
 
