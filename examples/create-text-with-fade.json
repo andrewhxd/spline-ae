@@ -1,0 +1,23 @@
+{
+  "version": "1.0",
+  "name": "Create Text with Fade In",
+  "actions": [
+    {
+      "type": "create_text",
+      "name": "Headline",
+      "text": "Hello World",
+      "position": [960, 200],
+      "style": {
+        "fontSize": 64,
+        "fontFamily": "Helvetica",
+        "fillColor": [1, 1, 1],
+        "justification": "center"
+      },
+      "animate": {
+        "preset": "fade-in",
+        "duration": 0.8,
+        "easing": "easeOutCubic"
+      }
+    }
+  ]
+}

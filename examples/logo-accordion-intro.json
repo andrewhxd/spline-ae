@@ -1,0 +1,71 @@
+{
+  "version": "1.0",
+  "name": "Logo Accordion Intro",
+  "animations": [
+    {
+      "target": { "mode": "pattern", "pattern": "Layer" },
+      "properties": [
+        { "property": "scale", "from": 80, "to": 100 },
+        { "property": "opacity", "from": 0, "to": 100 }
+      ],
+      "easing": "easeOutBack",
+      "duration": 0.9,
+      "stagger": { "delay": 0.08, "order": "center" }
+    },
+    {
+      "target": { "mode": "pattern", "pattern": "Layer 2" },
+      "properties": [
+        { "property": "position", "from": [0, 0], "to": [0, -40], "relative": true }
+      ],
+      "easing": "easeOutBack",
+      "duration": 0.85
+    },
+    {
+      "target": { "mode": "pattern", "pattern": "Layer 3" },
+      "properties": [
+        { "property": "position", "from": [0, 0], "to": [0, 40], "relative": true }
+      ],
+      "easing": "easeOutBack",
+      "duration": 0.85
+    },
+    {
+      "target": { "mode": "pattern", "pattern": "Layer 4" },
+      "properties": [
+        { "property": "position", "from": [0, 0], "to": [0, -3], "relative": true }
+      ],
+      "easing": "easeOutExpo",
+      "duration": 0.6
+    },
+    {
+      "target": { "mode": "pattern", "pattern": "Layer" },
+      "properties": [
+        { "property": "rotation", "from": -5, "to": 0 }
+      ],
+      "easing": "easeInOutQuad",
+      "duration": 1.0,
+      "startAt": 0.3
+    }
+  ],
+  "actions": [
+    {
+      "type": "create_text",
+      "name": "Brand",
+      "text": "shipped.one",
+      "position": [960, 660],
+      "style": {
+        "fontSize": 42,
+        "fillColor": [1, 1, 1],
+        "justification": "center"
+      },
+      "animate": {
+        "property": "typewriter",
+        "duration": 0.8,
+        "easing": "linear",
+        "startAt": 1.4,
+        "properties": [
+          { "property": "opacity", "from": 0, "to": 100 }
+        ]
+      }
+    }
+  ]
+}

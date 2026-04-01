@@ -1,0 +1,20 @@
+{
+  "name": "spline",
+  "version": "1.0.0",
+  "description": "Control Adobe After Effects with natural language via Claude Code",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "apply": "tsx src/cli.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "tsx": "^4.16.0",
+    "vitest": "^2.0.0",
+    "@types/node": "^20.14.0"
+  }
+}

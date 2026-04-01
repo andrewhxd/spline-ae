@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "name": "Fade + Slide with Stagger",
+  "animations": [
+    {
+      "preset": "slide-up",
+      "target": {
+        "mode": "pattern",
+        "pattern": "^Card"
+      },
+      "duration": 0.8,
+      "easing": "easeOutCubic",
+      "stagger": {
+        "delay": 0.12,
+        "order": "left-to-right"
+      }
+    }
+  ]
+}
