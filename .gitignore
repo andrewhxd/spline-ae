@@ -3,3 +3,4 @@ dist/
 *.js
 !vitest.config.ts
 .DS_Store
+examples/*.json
